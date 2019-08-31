@@ -4,6 +4,8 @@ RSpec.describe BusinessUnit, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:programs) }
+
     it { should belong_to(:director) }
 
     end
