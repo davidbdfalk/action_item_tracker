@@ -12,6 +12,8 @@ RSpec.describe Comment, type: :model do
 
     describe "Validations" do
 
+    it { should validate_presence_of(:action_item_id) }
+
     it { should validate_presence_of(:body) }
 
     it { should validate_presence_of(:commenter_id) }
