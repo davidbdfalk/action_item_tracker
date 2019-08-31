@@ -12,6 +12,8 @@ RSpec.describe ActionItem, type: :model do
 
     describe "Validations" do
 
+    it { should validate_presence_of(:actionee_id) }
+
     it { should validate_presence_of(:assigner_id) }
       
     end
