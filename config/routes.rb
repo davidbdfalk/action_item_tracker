@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Business unit resource:
+
+  # CREATE
+  get("/business_units/new", { :controller => "business_units", :action => "new_form" })
+  post("/create_business_unit", { :controller => "business_units", :action => "create_row" })
+
+  # READ
+  get("/business_units", { :controller => "business_units", :action => "index" })
+  get("/business_units/:id_to_display", { :controller => "business_units", :action => "show" })
+
+  # UPDATE
+  get("/business_units/:prefill_with_id/edit", { :controller => "business_units", :action => "edit_form" })
+  post("/update_business_unit/:id_to_modify", { :controller => "business_units", :action => "update_row" })
+
+  # DELETE
+  get("/delete_business_unit/:id_to_remove", { :controller => "business_units", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Program resource:
 
   # CREATE
