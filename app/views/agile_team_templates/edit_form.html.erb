@@ -39,7 +39,7 @@
     </label>
 
     <!-- Input for program_id start -->
-    <input type="text" id="program_id" name="program_id" class="form-control" value="<%= @agile_team.program_id %>">
+    <%= select_tag(:program_id, options_from_collection_for_select(Program.all, :id, :program, @agile_team.program_id), :class => "form-control") %>
     <!-- Input for program_id end -->
   </div>
   <!-- Label and input for program_id end -->
