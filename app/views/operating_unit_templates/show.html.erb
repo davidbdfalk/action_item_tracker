@@ -1,0 +1,73 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Operating unit #<%= @operating_unit.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/operating_units" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link operating_unit start -->
+      <div class="col">
+        <a href="/operating_units/<%= @operating_unit.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit operating unit
+        </a>
+      </div>
+      <!-- Edit link operating_unit end -->
+
+      <!-- Delete link operating_unit start -->
+      <div class="col">
+        <a href="/delete_operating_unit/<%= @operating_unit.id %>" class="btn btn-block btn-outline-secondary">
+          Delete operating unit
+        </a>
+      </div>
+      <!-- Delete link operating_unit end -->
+    </div>
+
+    <dl>
+      <dt>
+        Operating unit
+      </dt>
+      <!-- Display operating_unit start -->
+      <dd>
+        <%= @operating_unit.operating_unit %>
+      </dd>
+      <!-- Display operating_unit end -->
+
+      <dt>
+        Vice president
+      </dt>
+      <!-- Display vice_president_id start -->
+      <dd>
+        <%= @operating_unit.vice_president_id %>
+      </dd>
+      <!-- Display vice_president_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@operating_unit.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@operating_unit.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

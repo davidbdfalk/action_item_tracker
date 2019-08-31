@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Operating unit resource:
+
+  # CREATE
+  get("/operating_units/new", { :controller => "operating_units", :action => "new_form" })
+  post("/create_operating_unit", { :controller => "operating_units", :action => "create_row" })
+
+  # READ
+  get("/operating_units", { :controller => "operating_units", :action => "index" })
+  get("/operating_units/:id_to_display", { :controller => "operating_units", :action => "show" })
+
+  # UPDATE
+  get("/operating_units/:prefill_with_id/edit", { :controller => "operating_units", :action => "edit_form" })
+  post("/update_operating_unit/:id_to_modify", { :controller => "operating_units", :action => "update_row" })
+
+  # DELETE
+  get("/delete_operating_unit/:id_to_remove", { :controller => "operating_units", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Business unit resource:
 
   # CREATE
