@@ -4,6 +4,8 @@ RSpec.describe User, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:agile_teams) }
+
     it { should have_many(:programs) }
 
     it { should have_many(:business_units) }

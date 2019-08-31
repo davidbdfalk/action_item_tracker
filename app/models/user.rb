@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :agile_teams,
+             :foreign_key => "scrum_master_id",
+             :dependent => :nullify
+
   has_many   :programs,
              :foreign_key => "program_manager_id",
              :dependent => :nullify
