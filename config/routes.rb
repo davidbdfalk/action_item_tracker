@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Program resource:
+
+  # CREATE
+  get("/programs/new", { :controller => "programs", :action => "new_form" })
+  post("/create_program", { :controller => "programs", :action => "create_row" })
+
+  # READ
+  get("/programs", { :controller => "programs", :action => "index" })
+  get("/programs/:id_to_display", { :controller => "programs", :action => "show" })
+
+  # UPDATE
+  get("/programs/:prefill_with_id/edit", { :controller => "programs", :action => "edit_form" })
+  post("/update_program/:id_to_modify", { :controller => "programs", :action => "update_row" })
+
+  # DELETE
+  get("/delete_program/:id_to_remove", { :controller => "programs", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Comment resource:
 
   # CREATE

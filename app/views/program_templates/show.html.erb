@@ -1,0 +1,82 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Program #<%= @program.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/programs" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link program start -->
+      <div class="col">
+        <a href="/programs/<%= @program.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit program
+        </a>
+      </div>
+      <!-- Edit link program end -->
+
+      <!-- Delete link program start -->
+      <div class="col">
+        <a href="/delete_program/<%= @program.id %>" class="btn btn-block btn-outline-secondary">
+          Delete program
+        </a>
+      </div>
+      <!-- Delete link program end -->
+    </div>
+
+    <dl>
+      <dt>
+        Program
+      </dt>
+      <!-- Display program start -->
+      <dd>
+        <%= @program.program %>
+      </dd>
+      <!-- Display program end -->
+
+      <dt>
+        Program manager
+      </dt>
+      <!-- Display program_manager_id start -->
+      <dd>
+        <%= @program.program_manager_id %>
+      </dd>
+      <!-- Display program_manager_id end -->
+
+      <dt>
+        Business unit
+      </dt>
+      <!-- Display business_unit_id start -->
+      <dd>
+        <%= @program.business_unit_id %>
+      </dd>
+      <!-- Display business_unit_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@program.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@program.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

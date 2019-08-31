@@ -1,0 +1,68 @@
+<!-- Validation failure messages -->
+<% if @program.present? %>
+  <% if @program.errors.any? %>
+    <% @program.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new program
+</h1>
+
+
+<hr>
+
+<!-- Form program start -->
+<form action="/create_program" method="post">
+<!-- Form program end -->
+
+  <!-- Label and input for program start -->
+  <div class="form-group">
+    <label for="program">
+      Program
+    </label>
+
+    <!-- Input for program start -->
+    <input type="text" id="program" name="program" class="form-control" value="<%= @program.program %>">
+    <!-- Input for program end -->
+  </div>
+  <!-- Label and input for program end -->
+
+  <!-- Label and input for program_manager_id start -->
+  <div class="form-group">
+    <label for="program_manager_id">
+      Program manager
+    </label>
+
+    <!-- Input for program_manager_id start -->
+    <input type="text" id="program_manager_id" name="program_manager_id" class="form-control" value="<%= @program.program_manager_id %>">
+    <!-- Input for program_manager_id end -->
+  </div>
+  <!-- Label and input for program_manager_id end -->
+
+  <!-- Label and input for business_unit_id start -->
+  <div class="form-group">
+    <label for="business_unit_id">
+      Business unit
+    </label>
+
+    <!-- Input for business_unit_id start -->
+    <input type="text" id="business_unit_id" name="business_unit_id" class="form-control" value="<%= @program.business_unit_id %>">
+    <!-- Input for business_unit_id end -->
+  </div>
+  <!-- Label and input for business_unit_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create program
+  </button>
+</form>
+
+<hr>
+
+<a href="/programs">
+  Go back
+</a>
