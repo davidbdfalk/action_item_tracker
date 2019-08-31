@@ -28,7 +28,7 @@
     </label>
 
     <!-- Input for program_manager_id start -->
-    <input type="text" id="program_manager_id" name="program_manager_id" class="form-control">
+    <%= select_tag(:program_manager_id, options_from_collection_for_select(User.all, :id, :username, @program.program_manager_id), :class => "form-control") %>
     <!-- Input for program_manager_id end -->
   </div>
   <!-- Label and input for program_manager_id end -->
