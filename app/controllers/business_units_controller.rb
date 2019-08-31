@@ -1,6 +1,6 @@
 class BusinessUnitsController < ApplicationController
   def index
-    @business_units = BusinessUnit.all
+    @business_units = BusinessUnit.page(params[:page]).per(10)
 
     render("business_unit_templates/index.html.erb")
   end

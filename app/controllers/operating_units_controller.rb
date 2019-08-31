@@ -1,6 +1,6 @@
 class OperatingUnitsController < ApplicationController
   def index
-    @operating_units = OperatingUnit.all
+    @operating_units = OperatingUnit.page(params[:page]).per(10)
 
     render("operating_unit_templates/index.html.erb")
   end

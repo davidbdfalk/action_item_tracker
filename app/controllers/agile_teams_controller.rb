@@ -1,6 +1,6 @@
 class AgileTeamsController < ApplicationController
   def index
-    @agile_teams = AgileTeam.all
+    @agile_teams = AgileTeam.page(params[:page]).per(10)
 
     render("agile_team_templates/index.html.erb")
   end
