@@ -16,7 +16,7 @@
     </label>
 
     <!-- Input for assigner_id start -->
-    <input type="text" id="assigner_id" name="assigner_id" class="form-control">
+    <%= select_tag(:assigner_id, options_from_collection_for_select(User.all, :id, :username, @action_item.assigner_id), :class => "form-control") %>
     <!-- Input for assigner_id end -->
   </div>
   <!-- Label and input for assigner_id end -->
