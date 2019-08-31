@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_agile_team/:id_to_remove", { :controller => "agile_teams", :action => "destroy_row" })
+  get("/delete_agile_team_from_program/:id_to_remove", { :controller => "agile_teams", :action => "destroy_row_from_program" })
+  get("/delete_agile_team_from_scrum_master/:id_to_remove", { :controller => "agile_teams", :action => "destroy_row_from_scrum_master" })
 
   #------------------------------
 
@@ -37,6 +39,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_operating_unit/:id_to_remove", { :controller => "operating_units", :action => "destroy_row" })
+  get("/delete_operating_unit_from_vice_president/:id_to_remove", { :controller => "operating_units", :action => "destroy_row_from_vice_president" })
 
   #------------------------------
 
@@ -56,6 +59,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_business_unit/:id_to_remove", { :controller => "business_units", :action => "destroy_row" })
+  get("/delete_business_unit_from_operating_unit/:id_to_remove", { :controller => "business_units", :action => "destroy_row_from_operating_unit" })
+  get("/delete_business_unit_from_director/:id_to_remove", { :controller => "business_units", :action => "destroy_row_from_director" })
 
   #------------------------------
 
@@ -75,6 +80,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_program/:id_to_remove", { :controller => "programs", :action => "destroy_row" })
+  get("/delete_program_from_business_unit/:id_to_remove", { :controller => "programs", :action => "destroy_row_from_business_unit" })
+  get("/delete_program_from_program_manager/:id_to_remove", { :controller => "programs", :action => "destroy_row_from_program_manager" })
 
   #------------------------------
 
@@ -94,6 +101,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_comment/:id_to_remove", { :controller => "comments", :action => "destroy_row" })
+  get("/delete_comment_from_action_item/:id_to_remove", { :controller => "comments", :action => "destroy_row_from_action_item" })
+  get("/delete_comment_from_commenter/:id_to_remove", { :controller => "comments", :action => "destroy_row_from_commenter" })
 
   #------------------------------
 
@@ -113,6 +122,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_action_item/:id_to_remove", { :controller => "action_items", :action => "destroy_row" })
+  get("/delete_action_item_from_recipient/:id_to_remove", { :controller => "action_items", :action => "destroy_row_from_recipient" })
+  get("/delete_action_item_from_sender/:id_to_remove", { :controller => "action_items", :action => "destroy_row_from_sender" })
 
   #------------------------------
 

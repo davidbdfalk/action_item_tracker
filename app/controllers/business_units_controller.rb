@@ -55,6 +55,22 @@ class BusinessUnitsController < ApplicationController
     end
   end
 
+  def destroy_row_from_director
+    @business_unit = BusinessUnit.find(params.fetch("id_to_remove"))
+
+    @business_unit.destroy
+
+    redirect_to("/users/#{@business_unit.director_id}", notice: "BusinessUnit deleted successfully.")
+  end
+
+  def destroy_row_from_operating_unit
+    @business_unit = BusinessUnit.find(params.fetch("id_to_remove"))
+
+    @business_unit.destroy
+
+    redirect_to("/operating_units/#{@business_unit.operating_unit_id}", notice: "BusinessUnit deleted successfully.")
+  end
+
   def destroy_row
     @business_unit = BusinessUnit.find(params.fetch("id_to_remove"))
 

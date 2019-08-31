@@ -53,6 +53,14 @@ class OperatingUnitsController < ApplicationController
     end
   end
 
+  def destroy_row_from_vice_president
+    @operating_unit = OperatingUnit.find(params.fetch("id_to_remove"))
+
+    @operating_unit.destroy
+
+    redirect_to("/users/#{@operating_unit.vice_president_id}", notice: "OperatingUnit deleted successfully.")
+  end
+
   def destroy_row
     @operating_unit = OperatingUnit.find(params.fetch("id_to_remove"))
 

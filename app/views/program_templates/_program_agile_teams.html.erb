@@ -1,0 +1,37 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Agile Teams
+
+    <a data-toggle="collapse" href="#program_agile_teams_new_form">
+      Add agile team
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @program.agile_teams.each do |agile_team| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/agile_teams/<%= agile_team.id %>">
+          <%= agile_team.agile_team %>
+        </a>
+        <!-- Show link end -->
+
+        <!-- Delete link start -->
+        <a href="/delete_agile_team_from_program/<%= agile_team.id %>">
+          Delete
+        </a>
+        <!-- Delete link end -->
+
+      </li>
+    <% end %>
+
+    <div class="card-footer">
+      <div class="collapse" id="program_agile_teams_new_form">
+        <!-- New associationcollection form start -->
+
+        <!-- New associationcollection form end -->
+      </div>
+    </div>
+
+  </ul>
+</div>

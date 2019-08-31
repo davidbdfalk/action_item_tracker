@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Sent Follow Requests
+
+    <a data-toggle="collapse" href="#user_sent_follow_requests_new_form">
+      Add action item
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.sent_follow_requests.each do |action_item| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/action_items/<%= action_item.id %>">
+          <%= action_item.created_at %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

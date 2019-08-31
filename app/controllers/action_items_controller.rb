@@ -61,6 +61,22 @@ class ActionItemsController < ApplicationController
     end
   end
 
+  def destroy_row_from_sender
+    @action_item = ActionItem.find(params.fetch("id_to_remove"))
+
+    @action_item.destroy
+
+    redirect_to("/users/#{@action_item.assigner_id}", notice: "ActionItem deleted successfully.")
+  end
+
+  def destroy_row_from_recipient
+    @action_item = ActionItem.find(params.fetch("id_to_remove"))
+
+    @action_item.destroy
+
+    redirect_to("/users/#{@action_item.actionee_id}", notice: "ActionItem deleted successfully.")
+  end
+
   def destroy_row
     @action_item = ActionItem.find(params.fetch("id_to_remove"))
 

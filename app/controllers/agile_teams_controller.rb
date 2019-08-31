@@ -55,6 +55,22 @@ class AgileTeamsController < ApplicationController
     end
   end
 
+  def destroy_row_from_scrum_master
+    @agile_team = AgileTeam.find(params.fetch("id_to_remove"))
+
+    @agile_team.destroy
+
+    redirect_to("/users/#{@agile_team.scrum_master_id}", notice: "AgileTeam deleted successfully.")
+  end
+
+  def destroy_row_from_program
+    @agile_team = AgileTeam.find(params.fetch("id_to_remove"))
+
+    @agile_team.destroy
+
+    redirect_to("/programs/#{@agile_team.program_id}", notice: "AgileTeam deleted successfully.")
+  end
+
   def destroy_row
     @agile_team = AgileTeam.find(params.fetch("id_to_remove"))
 

@@ -55,6 +55,22 @@ class ProgramsController < ApplicationController
     end
   end
 
+  def destroy_row_from_program_manager
+    @program = Program.find(params.fetch("id_to_remove"))
+
+    @program.destroy
+
+    redirect_to("/users/#{@program.program_manager_id}", notice: "Program deleted successfully.")
+  end
+
+  def destroy_row_from_business_unit
+    @program = Program.find(params.fetch("id_to_remove"))
+
+    @program.destroy
+
+    redirect_to("/business_units/#{@program.business_unit_id}", notice: "Program deleted successfully.")
+  end
+
   def destroy_row
     @program = Program.find(params.fetch("id_to_remove"))
 
