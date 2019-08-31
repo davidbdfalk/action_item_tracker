@@ -5,4 +5,6 @@ class ActionItem < ApplicationRecord
 
   # Validations
 
+  validates :assigner_id, :presence => true
+
 end
