@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Agile team resource:
+
+  # CREATE
+  get("/agile_teams/new", { :controller => "agile_teams", :action => "new_form" })
+  post("/create_agile_team", { :controller => "agile_teams", :action => "create_row" })
+
+  # READ
+  get("/agile_teams", { :controller => "agile_teams", :action => "index" })
+  get("/agile_teams/:id_to_display", { :controller => "agile_teams", :action => "show" })
+
+  # UPDATE
+  get("/agile_teams/:prefill_with_id/edit", { :controller => "agile_teams", :action => "edit_form" })
+  post("/update_agile_team/:id_to_modify", { :controller => "agile_teams", :action => "update_row" })
+
+  # DELETE
+  get("/delete_agile_team/:id_to_remove", { :controller => "agile_teams", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Operating unit resource:
 
   # CREATE

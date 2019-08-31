@@ -1,0 +1,65 @@
+<!-- Validation failure messages -->
+<% if @agile_team.errors.any? %>
+  <% @agile_team.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit agile team #<%= @agile_team.id %>
+</h1>
+
+<hr>
+
+<!-- Form agile_team start -->
+<form action="/update_agile_team/<%= @agile_team.id %>" method="post">
+<!-- Form agile_team end -->
+
+  <!-- Label and input for agile_team start -->
+  <div class="form-group">
+    <label for="agile_team">
+      Agile team
+    </label>
+
+    <!-- Input for agile_team start -->
+    <input type="text" id="agile_team" name="agile_team" class="form-control" value="<%= @agile_team.agile_team %>">
+    <!-- Input for agile_team end -->
+  </div>
+  <!-- Label and input for agile_team end -->
+
+  <!-- Label and input for scrum_master_id start -->
+  <div class="form-group">
+    <label for="scrum_master_id">
+      Scrum master
+    </label>
+
+    <!-- Input for scrum_master_id start -->
+    <input type="text" id="scrum_master_id" name="scrum_master_id" class="form-control" value="<%= @agile_team.scrum_master_id %>">
+    <!-- Input for scrum_master_id end -->
+  </div>
+  <!-- Label and input for scrum_master_id end -->
+
+  <!-- Label and input for program_id start -->
+  <div class="form-group">
+    <label for="program_id">
+      Program
+    </label>
+
+    <!-- Input for program_id start -->
+    <input type="text" id="program_id" name="program_id" class="form-control" value="<%= @agile_team.program_id %>">
+    <!-- Input for program_id end -->
+  </div>
+  <!-- Label and input for program_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update agile team
+  </button>
+</form>
+
+<hr>
+
+<a href="/agile_teams">
+  Go back
+</a>
