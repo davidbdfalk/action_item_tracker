@@ -1,6 +1,9 @@
 class BusinessUnit < ApplicationRecord
   # Direct associations
 
+  belongs_to :operating_unit,
+             :counter_cache => true
+
   has_many   :programs,
              :dependent => :destroy
 

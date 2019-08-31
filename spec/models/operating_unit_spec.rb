@@ -4,6 +4,8 @@ RSpec.describe OperatingUnit, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:business_units) }
+
     it { should belong_to(:vice_president) }
 
     end
