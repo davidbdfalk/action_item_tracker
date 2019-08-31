@@ -10,7 +10,7 @@ class ActionItemsController < ApplicationController
   end
 
   def index
-    @action_items = ActionItem.all
+    @action_items = current_user.sent_follow_requests.page(params[:page]).per(10)
 
     render("action_item_templates/index.html.erb")
   end
