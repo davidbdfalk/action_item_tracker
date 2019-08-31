@@ -1,4 +1,6 @@
 ActiveAdmin.register ActionItem do
+
+ permit_params :assigner_id, :actionee_id, :action_item, :description, :deadline, :status
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
