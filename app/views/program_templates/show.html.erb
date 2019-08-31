@@ -43,7 +43,11 @@
       </dt>
       <!-- Display program_manager_id start -->
       <dd>
-        <%= @program.program_manager_id %>
+        <% if @program.program_manager.present? %>
+          <a href="/users/<%= @program.program_manager_id %>">
+            <%= @program.program_manager.username %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display program_manager_id end -->
 
@@ -52,7 +56,11 @@
       </dt>
       <!-- Display business_unit_id start -->
       <dd>
-        <%= @program.business_unit_id %>
+        <% if @program.business_unit.present? %>
+          <a href="/business_units/<%= @program.business_unit_id %>">
+            <%= @program.business_unit.business_unit %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display business_unit_id end -->
 

@@ -68,13 +68,21 @@
 
         <!-- Display business_unit.director_id start -->
         <td>
-          <%= business_unit.director.username %>
+          <% if business_unit.director.present? %>
+            <a href="/users/<%= business_unit.director.id %>">
+              <%= business_unit.director.username %>
+            </a>
+          <% end %>
         </td>
         <!-- Display business_unit.director_id end -->
 
         <!-- Display business_unit.operating_unit_id start -->
         <td>
-          <%= business_unit.operating_unit.operating_unit %>
+          <% if business_unit.operating_unit.present? %>
+            <a href="/operating_units/<%= business_unit.operating_unit.id %>">
+              <%= business_unit.operating_unit.operating_unit %>
+            </a>
+          <% end %>
         </td>
         <!-- Display business_unit.operating_unit_id end -->
 

@@ -43,7 +43,11 @@
       </dt>
       <!-- Display scrum_master_id start -->
       <dd>
-        <%= @agile_team.scrum_master_id %>
+        <% if @agile_team.scrum_master.present? %>
+          <a href="/users/<%= @agile_team.scrum_master_id %>">
+            <%= @agile_team.scrum_master.username %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display scrum_master_id end -->
 
@@ -52,7 +56,11 @@
       </dt>
       <!-- Display program_id start -->
       <dd>
-        <%= @agile_team.program_id %>
+        <% if @agile_team.program.present? %>
+          <a href="/programs/<%= @agile_team.program_id %>">
+            <%= @agile_team.program.program %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display program_id end -->
 

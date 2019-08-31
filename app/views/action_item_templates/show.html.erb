@@ -38,7 +38,11 @@
       </dt>
       <!-- Display assigner_id start -->
       <dd>
-        <%= @action_item.assigner_id %>
+        <% if @action_item.sender.present? %>
+          <a href="/users/<%= @action_item.assigner_id %>">
+            <%= @action_item.sender.username %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display assigner_id end -->
 
@@ -47,7 +51,11 @@
       </dt>
       <!-- Display actionee_id start -->
       <dd>
-        <%= @action_item.actionee_id %>
+        <% if @action_item.recipient.present? %>
+          <a href="/users/<%= @action_item.actionee_id %>">
+            <%= @action_item.recipient.username %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display actionee_id end -->
 

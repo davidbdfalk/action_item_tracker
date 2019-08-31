@@ -68,13 +68,21 @@
 
         <!-- Display program.program_manager_id start -->
         <td>
-          <%= program.program_manager.username %>
+          <% if program.program_manager.present? %>
+            <a href="/users/<%= program.program_manager.id %>">
+              <%= program.program_manager.username %>
+            </a>
+          <% end %>
         </td>
         <!-- Display program.program_manager_id end -->
 
         <!-- Display program.business_unit_id start -->
         <td>
-          <%= program.business_unit.business_unit %>
+          <% if program.business_unit.present? %>
+            <a href="/business_units/<%= program.business_unit.id %>">
+              <%= program.business_unit.business_unit %>
+            </a>
+          <% end %>
         </td>
         <!-- Display program.business_unit_id end -->
 

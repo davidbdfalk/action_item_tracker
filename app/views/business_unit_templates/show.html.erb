@@ -43,7 +43,11 @@
       </dt>
       <!-- Display director_id start -->
       <dd>
-        <%= @business_unit.director_id %>
+        <% if @business_unit.director.present? %>
+          <a href="/users/<%= @business_unit.director_id %>">
+            <%= @business_unit.director.username %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display director_id end -->
 
@@ -52,7 +56,11 @@
       </dt>
       <!-- Display operating_unit_id start -->
       <dd>
-        <%= @business_unit.operating_unit_id %>
+        <% if @business_unit.operating_unit.present? %>
+          <a href="/operating_units/<%= @business_unit.operating_unit_id %>">
+            <%= @business_unit.operating_unit.operating_unit %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display operating_unit_id end -->
 

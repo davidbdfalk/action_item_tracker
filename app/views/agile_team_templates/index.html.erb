@@ -68,13 +68,21 @@
 
         <!-- Display agile_team.scrum_master_id start -->
         <td>
-          <%= agile_team.scrum_master.username %>
+          <% if agile_team.scrum_master.present? %>
+            <a href="/users/<%= agile_team.scrum_master.id %>">
+              <%= agile_team.scrum_master.username %>
+            </a>
+          <% end %>
         </td>
         <!-- Display agile_team.scrum_master_id end -->
 
         <!-- Display agile_team.program_id start -->
         <td>
-          <%= agile_team.program.program %>
+          <% if agile_team.program.present? %>
+            <a href="/programs/<%= agile_team.program.id %>">
+              <%= agile_team.program.program %>
+            </a>
+          <% end %>
         </td>
         <!-- Display agile_team.program_id end -->
 

@@ -43,7 +43,11 @@
       </dt>
       <!-- Display vice_president_id start -->
       <dd>
-        <%= @operating_unit.vice_president_id %>
+        <% if @operating_unit.vice_president.present? %>
+          <a href="/users/<%= @operating_unit.vice_president_id %>">
+            <%= @operating_unit.vice_president.username %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display vice_president_id end -->
 

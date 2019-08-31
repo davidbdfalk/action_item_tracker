@@ -64,7 +64,11 @@
 
         <!-- Display operating_unit.vice_president_id start -->
         <td>
-          <%= operating_unit.vice_president.username %>
+          <% if operating_unit.vice_president.present? %>
+            <a href="/users/<%= operating_unit.vice_president.id %>">
+              <%= operating_unit.vice_president.username %>
+            </a>
+          <% end %>
         </td>
         <!-- Display operating_unit.vice_president_id end -->
 

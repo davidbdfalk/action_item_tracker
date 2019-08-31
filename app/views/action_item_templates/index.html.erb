@@ -74,13 +74,21 @@
 
         <!-- Display action_item.assigner_id start -->
         <td>
-          <%= action_item.sender.username %>
+          <% if action_item.sender.present? %>
+            <a href="/users/<%= action_item.sender.id %>">
+              <%= action_item.sender.username %>
+            </a>
+          <% end %>
         </td>
         <!-- Display action_item.assigner_id end -->
 
         <!-- Display action_item.actionee_id start -->
         <td>
-          <%= action_item.recipient.username %>
+          <% if action_item.recipient.present? %>
+            <a href="/users/<%= action_item.recipient.id %>">
+              <%= action_item.recipient.username %>
+            </a>
+          <% end %>
         </td>
         <!-- Display action_item.actionee_id end -->
 
