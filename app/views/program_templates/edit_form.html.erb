@@ -39,7 +39,7 @@
     </label>
 
     <!-- Input for business_unit_id start -->
-    <input type="text" id="business_unit_id" name="business_unit_id" class="form-control" value="<%= @program.business_unit_id %>">
+    <%= select_tag(:business_unit_id, options_from_collection_for_select(BusinessUnit.all, :id, :business_unit, @program.business_unit_id), :class => "form-control") %>
     <!-- Input for business_unit_id end -->
   </div>
   <!-- Label and input for business_unit_id end -->
