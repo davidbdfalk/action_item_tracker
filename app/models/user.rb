@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :operating_units,
+             :foreign_key => "vice_president_id",
+             :dependent => :nullify
+
   has_many   :received_follow_requests,
              :class_name => "ActionItem",
              :foreign_key => "actionee_id",
