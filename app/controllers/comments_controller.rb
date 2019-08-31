@@ -33,6 +33,22 @@ class CommentsController < ApplicationController
     end
   end
 
+  def create_row_from_action_item
+    @comment = Comment.new
+
+    @comment.body = params.fetch("body")
+    @comment.commenter_id = params.fetch("commenter_id")
+    @comment.action_item_id = params.fetch("action_item_id")
+
+    if @comment.valid?
+      @comment.save
+
+      redirect_to("/action_items/#{@comment.action_item_id}", notice: "Comment created successfully.")
+    else
+      render("comment_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @comment = Comment.find(params.fetch("prefill_with_id"))
 

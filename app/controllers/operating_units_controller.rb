@@ -6,6 +6,7 @@ class OperatingUnitsController < ApplicationController
   end
 
   def show
+    @business_unit = BusinessUnit.new
     @operating_unit = OperatingUnit.find(params.fetch("id_to_display"))
 
     render("operating_unit_templates/show.html.erb")

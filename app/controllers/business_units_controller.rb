@@ -6,6 +6,7 @@ class BusinessUnitsController < ApplicationController
   end
 
   def show
+    @program = Program.new
     @business_unit = BusinessUnit.find(params.fetch("id_to_display"))
 
     render("business_unit_templates/show.html.erb")
@@ -28,6 +29,22 @@ class BusinessUnitsController < ApplicationController
       @business_unit.save
 
       redirect_back(:fallback_location => "/business_units", :notice => "Business unit created successfully.")
+    else
+      render("business_unit_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_operating_unit
+    @business_unit = BusinessUnit.new
+
+    @business_unit.business_unit = params.fetch("business_unit")
+    @business_unit.director_id = params.fetch("director_id")
+    @business_unit.operating_unit_id = params.fetch("operating_unit_id")
+
+    if @business_unit.valid?
+      @business_unit.save
+
+      redirect_to("/operating_units/#{@business_unit.operating_unit_id}", notice: "BusinessUnit created successfully.")
     else
       render("business_unit_templates/new_form_with_errors.html.erb")
     end

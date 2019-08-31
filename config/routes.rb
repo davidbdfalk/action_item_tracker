@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/agile_teams/new", { :controller => "agile_teams", :action => "new_form" })
   post("/create_agile_team", { :controller => "agile_teams", :action => "create_row" })
+  post("/create_agile_team_from_program", { :controller => "agile_teams", :action => "create_row_from_program" })
 
   # READ
   get("/agile_teams", { :controller => "agile_teams", :action => "index" })
@@ -48,6 +49,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/business_units/new", { :controller => "business_units", :action => "new_form" })
   post("/create_business_unit", { :controller => "business_units", :action => "create_row" })
+  post("/create_business_unit_from_operating_unit", { :controller => "business_units", :action => "create_row_from_operating_unit" })
 
   # READ
   get("/business_units", { :controller => "business_units", :action => "index" })
@@ -69,6 +71,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/programs/new", { :controller => "programs", :action => "new_form" })
   post("/create_program", { :controller => "programs", :action => "create_row" })
+  post("/create_program_from_business_unit", { :controller => "programs", :action => "create_row_from_business_unit" })
 
   # READ
   get("/programs", { :controller => "programs", :action => "index" })
@@ -90,6 +93,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/comments/new", { :controller => "comments", :action => "new_form" })
   post("/create_comment", { :controller => "comments", :action => "create_row" })
+  post("/create_comment_from_action_item", { :controller => "comments", :action => "create_row_from_action_item" })
 
   # READ
   get("/comments", { :controller => "comments", :action => "index" })

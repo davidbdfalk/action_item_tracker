@@ -6,6 +6,7 @@ class ActionItemsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
     @action_item = ActionItem.find(params.fetch("id_to_display"))
 
     render("action_item_templates/show.html.erb")

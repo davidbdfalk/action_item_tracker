@@ -6,6 +6,7 @@ class ProgramsController < ApplicationController
   end
 
   def show
+    @agile_team = AgileTeam.new
     @program = Program.find(params.fetch("id_to_display"))
 
     render("program_templates/show.html.erb")
@@ -28,6 +29,22 @@ class ProgramsController < ApplicationController
       @program.save
 
       redirect_back(:fallback_location => "/programs", :notice => "Program created successfully.")
+    else
+      render("program_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_business_unit
+    @program = Program.new
+
+    @program.program = params.fetch("program")
+    @program.program_manager_id = params.fetch("program_manager_id")
+    @program.business_unit_id = params.fetch("business_unit_id")
+
+    if @program.valid?
+      @program.save
+
+      redirect_to("/business_units/#{@program.business_unit_id}", notice: "Program created successfully.")
     else
       render("program_templates/new_form_with_errors.html.erb")
     end

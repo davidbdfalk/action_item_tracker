@@ -1,0 +1,37 @@
+<!-- Form agile_team start -->
+<form action="/create_agile_team_from_program" method="post">
+<!-- Form agile_team end -->
+
+  <!-- Label and input for agile_team start -->
+  <div class="form-group">
+    <label for="agile_team">
+      Agile team
+    </label>
+
+    <!-- Input for agile_team start -->
+    <input type="text" id="agile_team" name="agile_team" class="form-control" value="<%= @agile_team.agile_team %>">
+    <!-- Input for agile_team end -->
+  </div>
+  <!-- Label and input for agile_team end -->
+
+  <!-- Label and input for scrum_master_id start -->
+  <div class="form-group">
+    <label for="scrum_master_id">
+      Scrum master
+    </label>
+
+    <!-- Input for scrum_master_id start -->
+    <input type="text" id="scrum_master_id" name="scrum_master_id" class="form-control" value="<%= @agile_team.scrum_master_id %>">
+    <!-- Input for scrum_master_id end -->
+  </div>
+  <!-- Label and input for scrum_master_id end -->
+
+  <!-- Label and input for program_id start -->
+  <!-- Input for program_id start -->
+  <input type="hidden" name="program_id" value="<%= @program.id %>">
+  <!-- Input for program_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create agile team
+  </button>
+</form>

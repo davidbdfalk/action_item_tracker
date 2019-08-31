@@ -33,6 +33,22 @@ class AgileTeamsController < ApplicationController
     end
   end
 
+  def create_row_from_program
+    @agile_team = AgileTeam.new
+
+    @agile_team.agile_team = params.fetch("agile_team")
+    @agile_team.scrum_master_id = params.fetch("scrum_master_id")
+    @agile_team.program_id = params.fetch("program_id")
+
+    if @agile_team.valid?
+      @agile_team.save
+
+      redirect_to("/programs/#{@agile_team.program_id}", notice: "AgileTeam created successfully.")
+    else
+      render("agile_team_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @agile_team = AgileTeam.find(params.fetch("prefill_with_id"))
 
