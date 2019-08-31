@@ -27,7 +27,7 @@
     </label>
 
     <!-- Input for vice_president_id start -->
-    <input type="text" id="vice_president_id" name="vice_president_id" class="form-control" value="<%= @operating_unit.vice_president_id %>">
+    <%= select_tag(:vice_president_id, options_from_collection_for_select(User.all, :id, :username, @operating_unit.vice_president_id), :class => "form-control") %>
     <!-- Input for vice_president_id end -->
   </div>
   <!-- Label and input for vice_president_id end -->
