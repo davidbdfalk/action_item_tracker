@@ -1,6 +1,11 @@
 class ActionItem < ApplicationRecord
   # Direct associations
 
+  belongs_to :sender,
+             :class_name => "User",
+             :foreign_key => "assigner_id",
+             :counter_cache => :sent_follow_requests_count
+
   # Indirect associations
 
   # Validations
