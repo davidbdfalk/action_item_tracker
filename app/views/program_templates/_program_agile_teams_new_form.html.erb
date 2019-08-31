@@ -21,7 +21,7 @@
     </label>
 
     <!-- Input for scrum_master_id start -->
-    <input type="text" id="scrum_master_id" name="scrum_master_id" class="form-control" value="<%= @agile_team.scrum_master_id %>">
+    <%= select_tag(:scrum_master_id, options_from_collection_for_select(User.all, :id, :username, @agile_team.scrum_master_id), :class => "form-control") %>
     <!-- Input for scrum_master_id end -->
   </div>
   <!-- Label and input for scrum_master_id end -->
