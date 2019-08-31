@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :programs,
+             :foreign_key => "program_manager_id",
+             :dependent => :nullify
+
   has_many   :business_units,
              :foreign_key => "director_id",
              :dependent => :nullify
