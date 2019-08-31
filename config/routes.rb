@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "action_items#index"
   # Routes for the Agile team resource:
 
   # CREATE
