@@ -4,33 +4,23 @@
 
 <hr>
 
-<!-- Form operating_unit start -->
 <form action="/update_operating_unit/<%= @operating_unit.id %>" method="post">
-<!-- Form operating_unit end -->
 
-  <!-- Label and input for operating_unit start -->
   <div class="form-group">
     <label for="operating_unit">
       Operating unit
     </label>
 
-    <!-- Input for operating_unit start -->
     <input type="text" id="operating_unit" name="operating_unit" class="form-control" value="<%= @operating_unit.operating_unit %>">
-    <!-- Input for operating_unit end -->
   </div>
-  <!-- Label and input for operating_unit end -->
 
-  <!-- Label and input for vice_president_id start -->
   <div class="form-group">
     <label for="vice_president_id">
       Vice president
     </label>
 
-    <!-- Input for vice_president_id start -->
     <%= select_tag(:vice_president_id, options_from_collection_for_select(User.all, :id, :username, @operating_unit.vice_president_id), :class => "form-control") %>
-    <!-- Input for vice_president_id end -->
   </div>
-  <!-- Label and input for vice_president_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update operating unit

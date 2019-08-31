@@ -5,45 +5,31 @@
 
 <hr>
 
-<!-- Form agile_team start -->
 <form action="/create_agile_team" method="post">
-<!-- Form agile_team end -->
 
-  <!-- Label and input for agile_team start -->
   <div class="form-group">
     <label for="agile_team">
       Agile team
     </label>
 
-    <!-- Input for agile_team start -->
     <input type="text" id="agile_team" name="agile_team" class="form-control">
-    <!-- Input for agile_team end -->
   </div>
-  <!-- Label and input for agile_team end -->
 
-  <!-- Label and input for scrum_master_id start -->
   <div class="form-group">
     <label for="scrum_master_id">
       Scrum master
     </label>
 
-    <!-- Input for scrum_master_id start -->
     <%= select_tag(:scrum_master_id, options_from_collection_for_select(User.all, :id, :username, @agile_team.scrum_master_id), :class => "form-control") %>
-    <!-- Input for scrum_master_id end -->
   </div>
-  <!-- Label and input for scrum_master_id end -->
 
-  <!-- Label and input for program_id start -->
   <div class="form-group">
     <label for="program_id">
       Program
     </label>
 
-    <!-- Input for program_id start -->
     <%= select_tag(:program_id, options_from_collection_for_select(Program.all, :id, :program, @agile_team.program_id), :class => "form-control") %>
-    <!-- Input for program_id end -->
   </div>
-  <!-- Label and input for program_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create agile team

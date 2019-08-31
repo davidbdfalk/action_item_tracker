@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @business_unit.present? %>
   <% if @business_unit.errors.any? %>
     <% @business_unit.errors.full_messages.each do |message| %>
@@ -16,45 +15,31 @@
 
 <hr>
 
-<!-- Form business_unit start -->
 <form action="/create_business_unit" method="post">
-<!-- Form business_unit end -->
 
-  <!-- Label and input for business_unit start -->
   <div class="form-group">
     <label for="business_unit">
       Business unit
     </label>
 
-    <!-- Input for business_unit start -->
     <input type="text" id="business_unit" name="business_unit" class="form-control" value="<%= @business_unit.business_unit %>">
-    <!-- Input for business_unit end -->
   </div>
-  <!-- Label and input for business_unit end -->
 
-  <!-- Label and input for director_id start -->
   <div class="form-group">
     <label for="director_id">
       Director
     </label>
 
-    <!-- Input for director_id start -->
     <%= select_tag(:director_id, options_from_collection_for_select(User.all, :id, :username, @business_unit.director_id), :class => "form-control") %>
-    <!-- Input for director_id end -->
   </div>
-  <!-- Label and input for director_id end -->
 
-  <!-- Label and input for operating_unit_id start -->
   <div class="form-group">
     <label for="operating_unit_id">
       Operating unit
     </label>
 
-    <!-- Input for operating_unit_id start -->
     <%= select_tag(:operating_unit_id, options_from_collection_for_select(OperatingUnit.all, :id, :operating_unit, @business_unit.operating_unit_id), :class => "form-control") %>
-    <!-- Input for operating_unit_id end -->
   </div>
-  <!-- Label and input for operating_unit_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create business unit

@@ -11,37 +11,30 @@
         </a>
       </div>
 
-      <!-- Edit link business_unit start -->
       <div class="col">
         <a href="/business_units/<%= @business_unit.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit business unit
         </a>
       </div>
-      <!-- Edit link business_unit end -->
 
-      <!-- Delete link business_unit start -->
       <div class="col">
         <a href="/delete_business_unit/<%= @business_unit.id %>" class="btn btn-block btn-outline-secondary">
           Delete business unit
         </a>
       </div>
-      <!-- Delete link business_unit end -->
     </div>
 
     <dl>
       <dt>
         Business unit
       </dt>
-      <!-- Display business_unit start -->
       <dd>
         <%= @business_unit.business_unit %>
       </dd>
-      <!-- Display business_unit end -->
 
       <dt>
         Director
       </dt>
-      <!-- Display director_id start -->
       <dd>
         <% if @business_unit.director.present? %>
           <a href="/users/<%= @business_unit.director_id %>">
@@ -49,12 +42,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display director_id end -->
 
       <dt>
         Operating unit
       </dt>
-      <!-- Display operating_unit_id start -->
       <dd>
         <% if @business_unit.operating_unit.present? %>
           <a href="/operating_units/<%= @business_unit.operating_unit_id %>">
@@ -62,33 +53,26 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display operating_unit_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@business_unit.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@business_unit.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "business_unit_templates/business_unit_programs" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

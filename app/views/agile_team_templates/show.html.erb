@@ -11,37 +11,30 @@
         </a>
       </div>
 
-      <!-- Edit link agile_team start -->
       <div class="col">
         <a href="/agile_teams/<%= @agile_team.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit agile team
         </a>
       </div>
-      <!-- Edit link agile_team end -->
 
-      <!-- Delete link agile_team start -->
       <div class="col">
         <a href="/delete_agile_team/<%= @agile_team.id %>" class="btn btn-block btn-outline-secondary">
           Delete agile team
         </a>
       </div>
-      <!-- Delete link agile_team end -->
     </div>
 
     <dl>
       <dt>
         Agile team
       </dt>
-      <!-- Display agile_team start -->
       <dd>
         <%= @agile_team.agile_team %>
       </dd>
-      <!-- Display agile_team end -->
 
       <dt>
         Scrum master
       </dt>
-      <!-- Display scrum_master_id start -->
       <dd>
         <% if @agile_team.scrum_master.present? %>
           <a href="/users/<%= @agile_team.scrum_master_id %>">
@@ -49,12 +42,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display scrum_master_id end -->
 
       <dt>
         Program
       </dt>
-      <!-- Display program_id start -->
       <dd>
         <% if @agile_team.program.present? %>
           <a href="/programs/<%= @agile_team.program_id %>">
@@ -62,28 +53,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display program_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@agile_team.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@agile_team.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

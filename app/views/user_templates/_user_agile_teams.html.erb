@@ -10,11 +10,9 @@
   <ul class="list-group list-group-flush">
     <% @user.agile_teams.each do |agile_team| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/agile_teams/<%= agile_team.id %>">
           <%= agile_team.agile_team %>
         </a>
-        <!-- Show link end -->
 
       </li>
     <% end %>

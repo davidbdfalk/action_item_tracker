@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "program_templates/programs_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -58,19 +54,14 @@
 
       <% @programs.each do |program| %>
       <tr>
-        <!-- Display program.id start -->
         <td>
           <%= program.id %>
         </td>
-        <!-- Display program.id end -->
 
-        <!-- Display program.program start -->
         <td>
           <%= program.program %>
         </td>
-        <!-- Display program.program end -->
 
-        <!-- Display program.program_manager_id start -->
         <td>
           <% if program.program_manager.present? %>
             <a href="/users/<%= program.program_manager.id %>">
@@ -78,9 +69,7 @@
             </a>
           <% end %>
         </td>
-        <!-- Display program.program_manager_id end -->
 
-        <!-- Display program.business_unit_id start -->
         <td>
           <% if program.business_unit.present? %>
             <a href="/business_units/<%= program.business_unit.id %>">
@@ -88,19 +77,14 @@
             </a>
           <% end %>
         </td>
-        <!-- Display program.business_unit_id end -->
 
-        <!-- Display program.created_at start -->
         <td>
           <%= time_ago_in_words(program.created_at) %> ago
         </td>
-        <!-- Display program.created_at end -->
 
-        <!-- Display program.updated_at start -->
         <td>
           <%= time_ago_in_words(program.updated_at) %> ago
         </td>
-        <!-- Display program.updated_at end -->
 
         <td>
           <a href="/programs/<%= program.id %>">

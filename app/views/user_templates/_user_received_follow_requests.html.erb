@@ -10,11 +10,9 @@
   <ul class="list-group list-group-flush">
     <% @user.received_follow_requests.each do |action_item| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/action_items/<%= action_item.id %>">
           <%= action_item.created_at %>
         </a>
-        <!-- Show link end -->
 
       </li>
     <% end %>

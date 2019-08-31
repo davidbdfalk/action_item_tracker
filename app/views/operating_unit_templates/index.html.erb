@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "operating_unit_templates/operating_units_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -54,19 +50,14 @@
 
       <% @operating_units.each do |operating_unit| %>
       <tr>
-        <!-- Display operating_unit.id start -->
         <td>
           <%= operating_unit.id %>
         </td>
-        <!-- Display operating_unit.id end -->
 
-        <!-- Display operating_unit.operating_unit start -->
         <td>
           <%= operating_unit.operating_unit %>
         </td>
-        <!-- Display operating_unit.operating_unit end -->
 
-        <!-- Display operating_unit.vice_president_id start -->
         <td>
           <% if operating_unit.vice_president.present? %>
             <a href="/users/<%= operating_unit.vice_president.id %>">
@@ -74,19 +65,14 @@
             </a>
           <% end %>
         </td>
-        <!-- Display operating_unit.vice_president_id end -->
 
-        <!-- Display operating_unit.created_at start -->
         <td>
           <%= time_ago_in_words(operating_unit.created_at) %> ago
         </td>
-        <!-- Display operating_unit.created_at end -->
 
-        <!-- Display operating_unit.updated_at start -->
         <td>
           <%= time_ago_in_words(operating_unit.updated_at) %> ago
         </td>
-        <!-- Display operating_unit.updated_at end -->
 
         <td>
           <a href="/operating_units/<%= operating_unit.id %>">

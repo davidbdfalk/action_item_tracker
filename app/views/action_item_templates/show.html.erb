@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link action_item start -->
       <div class="col">
         <% if current_user == @action_item.sender %>
           <a href="/action_items/<%= @action_item.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link action_item end -->
 
-      <!-- Delete link action_item start -->
       <div class="col">
         <% if current_user == @action_item.sender %>
           <a href="/delete_action_item/<%= @action_item.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,14 +26,12 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link action_item end -->
     </div>
 
     <dl>
       <dt>
         Assigner
       </dt>
-      <!-- Display assigner_id start -->
       <dd>
         <% if @action_item.sender.present? %>
           <a href="/users/<%= @action_item.assigner_id %>">
@@ -44,12 +39,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display assigner_id end -->
 
       <dt>
         Actionee
       </dt>
-      <!-- Display actionee_id start -->
       <dd>
         <% if @action_item.recipient.present? %>
           <a href="/users/<%= @action_item.actionee_id %>">
@@ -57,69 +50,54 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display actionee_id end -->
 
       <dt>
         Action item
       </dt>
-      <!-- Display action_item start -->
       <dd>
         <%= @action_item.action_item %>
       </dd>
-      <!-- Display action_item end -->
 
       <dt>
         Description
       </dt>
-      <!-- Display description start -->
       <dd>
         <%= @action_item.description %>
       </dd>
-      <!-- Display description end -->
 
       <dt>
         Deadline
       </dt>
-      <!-- Display deadline start -->
       <dd>
         <%= @action_item.deadline %>
       </dd>
-      <!-- Display deadline end -->
 
       <dt>
         Status
       </dt>
-      <!-- Display status start -->
       <dd>
         <%= @action_item.status %>
       </dd>
-      <!-- Display status end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@action_item.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@action_item.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "action_item_templates/action_item_comments" %>
   </div>
 </div>
-<!-- Show Page Customization end -->
