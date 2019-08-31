@@ -1,6 +1,11 @@
 class ActionItem < ApplicationRecord
   # Direct associations
 
+  belongs_to :recipient,
+             :class_name => "User",
+             :foreign_key => "actionee_id",
+             :counter_cache => :received_follow_requests_count
+
   belongs_to :sender,
              :class_name => "User",
              :foreign_key => "assigner_id",
