@@ -1,4 +1,6 @@
 ActiveAdmin.register BusinessUnit do
+
+ permit_params :business_unit, :director_id, :operating_unit_id
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
