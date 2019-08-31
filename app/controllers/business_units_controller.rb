@@ -1,6 +1,7 @@
 class BusinessUnitsController < ApplicationController
   def index
-    @business_units = BusinessUnit.page(params[:page]).per(10)
+    @q = BusinessUnit.ransack(params[:q])
+    @business_units = @q.result(:distinct => true).includes(:director, :programs, :operating_unit).page(params[:page]).per(10)
 
     render("business_unit_templates/index.html.erb")
   end

@@ -1,6 +1,7 @@
 class AgileTeamsController < ApplicationController
   def index
-    @agile_teams = AgileTeam.page(params[:page]).per(10)
+    @q = AgileTeam.ransack(params[:q])
+    @agile_teams = @q.result(:distinct => true).includes(:scrum_master, :program).page(params[:page]).per(10)
 
     render("agile_team_templates/index.html.erb")
   end

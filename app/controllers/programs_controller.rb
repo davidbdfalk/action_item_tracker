@@ -1,6 +1,7 @@
 class ProgramsController < ApplicationController
   def index
-    @programs = Program.page(params[:page]).per(10)
+    @q = Program.ransack(params[:q])
+    @programs = @q.result(:distinct => true).includes(:program_manager, :agile_teams, :business_unit).page(params[:page]).per(10)
 
     render("program_templates/index.html.erb")
   end
