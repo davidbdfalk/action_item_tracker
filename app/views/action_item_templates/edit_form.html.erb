@@ -9,15 +9,6 @@
 <!-- Form action_item end -->
 
   <!-- Label and input for assigner_id start -->
-  <div class="form-group">
-    <label for="assigner_id">
-      Assigner
-    </label>
-
-    <!-- Input for assigner_id start -->
-    <%= select_tag(:assigner_id, options_from_collection_for_select(User.all, :id, :username, @action_item.assigner_id), :class => "form-control") %>
-    <!-- Input for assigner_id end -->
-  </div>
   <!-- Label and input for assigner_id end -->
 
   <!-- Label and input for actionee_id start -->

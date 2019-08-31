@@ -46,7 +46,7 @@ class ActionItemsController < ApplicationController
   def update_row
     @action_item = ActionItem.find(params.fetch("id_to_modify"))
 
-    @action_item.assigner_id = params.fetch("assigner_id")
+    
     @action_item.actionee_id = params.fetch("actionee_id")
     @action_item.action_item = params.fetch("action_item")
     @action_item.description = params.fetch("description")
