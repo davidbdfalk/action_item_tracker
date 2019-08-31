@@ -1,4 +1,6 @@
 ActiveAdmin.register Program do
+
+ permit_params :program, :program_manager_id, :business_unit_id
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
