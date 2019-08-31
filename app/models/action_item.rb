@@ -1,6 +1,9 @@
 class ActionItem < ApplicationRecord
   # Direct associations
 
+  has_many   :comments,
+             :dependent => :destroy
+
   belongs_to :recipient,
              :class_name => "User",
              :foreign_key => "actionee_id",
