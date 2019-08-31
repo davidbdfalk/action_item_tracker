@@ -48,7 +48,7 @@
     </label>
 
     <!-- Input for action_item_id start -->
-    <input type="text" id="action_item_id" name="action_item_id" class="form-control" value="<%= @comment.action_item_id %>">
+    <%= select_tag(:action_item_id, options_from_collection_for_select(ActionItem.all, :id, :created_at, @comment.action_item_id), :class => "form-control") %>
     <!-- Input for action_item_id end -->
   </div>
   <!-- Label and input for action_item_id end -->
