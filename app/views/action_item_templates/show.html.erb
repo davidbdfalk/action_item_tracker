@@ -1,0 +1,109 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Action item #<%= @action_item.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/action_items" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link action_item start -->
+      <div class="col">
+        <a href="/action_items/<%= @action_item.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit action item
+        </a>
+      </div>
+      <!-- Edit link action_item end -->
+
+      <!-- Delete link action_item start -->
+      <div class="col">
+        <a href="/delete_action_item/<%= @action_item.id %>" class="btn btn-block btn-outline-secondary">
+          Delete action item
+        </a>
+      </div>
+      <!-- Delete link action_item end -->
+    </div>
+
+    <dl>
+      <dt>
+        Assigner
+      </dt>
+      <!-- Display assigner_id start -->
+      <dd>
+        <%= @action_item.assigner_id %>
+      </dd>
+      <!-- Display assigner_id end -->
+
+      <dt>
+        Actionee
+      </dt>
+      <!-- Display actionee_id start -->
+      <dd>
+        <%= @action_item.actionee_id %>
+      </dd>
+      <!-- Display actionee_id end -->
+
+      <dt>
+        Action item
+      </dt>
+      <!-- Display action_item start -->
+      <dd>
+        <%= @action_item.action_item %>
+      </dd>
+      <!-- Display action_item end -->
+
+      <dt>
+        Description
+      </dt>
+      <!-- Display description start -->
+      <dd>
+        <%= @action_item.description %>
+      </dd>
+      <!-- Display description end -->
+
+      <dt>
+        Deadline
+      </dt>
+      <!-- Display deadline start -->
+      <dd>
+        <%= @action_item.deadline %>
+      </dd>
+      <!-- Display deadline end -->
+
+      <dt>
+        Status
+      </dt>
+      <!-- Display status start -->
+      <dd>
+        <%= @action_item.status %>
+      </dd>
+      <!-- Display status end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@action_item.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@action_item.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
